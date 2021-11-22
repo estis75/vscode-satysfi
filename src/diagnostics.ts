@@ -172,10 +172,8 @@ export default class SATySFiProvider implements Disposable {
       }
     }
 
-    if (diagnostics.size == 0) {
-      this.collection.clear();
-      return;
-    }
+    this.collection.clear();
+
     diagnostics.forEach((ds, key) => {
       if (!fp.isAbsolute(key)) {
         key = fp.join(fp.dirname(origin), key);
