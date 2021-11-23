@@ -117,7 +117,7 @@ export default class SATySFiProvider implements Disposable {
     const output = String(stdout) + "\n" + String(stderr);
     let target: string | undefined;
     const diagnostics: Map<string, Diagnostic[]> = new Map();
-    let regex = /^(?:(  (?:reading|parsing) '(.+?)' ...)|(! \[(.+?)\] at "(.+)", (line (\d+), characters (\d+)-(\d+)|line (\d+), character (\d+) to line (\d+), character (\d+)):?\s*))$/gm;
+    let regex = /^(?:(  (?:reading|parsing|type checking) '(.+?)' ...)|(! \[(.+?)\] at "(.+)", (line (\d+), characters (\d+)-(\d+)|line (\d+), character (\d+) to line (\d+), character (\d+)):?\s*))$/gm;
     let pos: RegExpExecArray | null;
     let rawTarget: string | undefined;
     while ((pos = regex.exec(output))) {
